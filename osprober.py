@@ -43,13 +43,13 @@ os_dict = {"arch":['Arch Linux','''
              ╔╠╠╠╠╠,   ╚║║║║║║║║║║║║║║M╔╓╓╓#N,    
            ╓╠╠╠╠╠╠╠╠∩   ╙╙      └╙╙║║║║║║║║║║║N   
           #╠╠╠╠╠╠╠╠╠╚                ╙║║║║║║║║║║  
-         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║                                     Screen Resolution : {}
-  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ                                  Operating System  : {}
-.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║                                 Kernel Version    : {} 
-║║║║║║║║║║  ╠╠╠╠░                                                                             Desktop           : {}
-╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»                                 Total Memory      : {:1.2F} GB
- ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒                           Free Memory       : {:1.2F} GB
-         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓                                    Active Memory     : {:1.2F} GB 
+         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║                  Screen Resolution : {}
+  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ                 Operating System  : {}
+.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║                 Kernel Version    : {} 
+║║║║║║║║║║  ╠╠╠╠░                                                  Desktop           : {}
+╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»                 Total Memory      : {:1.2F} GB
+ ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒                 Free Memory       : {:1.2F} GB
+         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓                  Active Memory     : {:1.2F} GB 
          `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ 
            ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜  
             ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓    
@@ -85,7 +85,8 @@ else:
     memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memactive = memtotal-memfree
     #print(" ".join(ostype))
-    print(os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree))
+    os.system("clear")		
+    print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree))
     
 
 
