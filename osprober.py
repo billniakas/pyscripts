@@ -8,24 +8,24 @@ import re
 platform=platform.uname()
 
 os_dict = {"arch":['Arch Linux','''
-              +              
-              #              
-             ###             
-            #####            
-            ######                       Screen Resolution : {}
-           ; #####;                      Operating System  : {}
-          +##.#####                      Kernel Version    : {} 
-         +##########                     Desktop           : {}
-        #############;                   Total Memory      : {:1.2F} GB
-       ###############+                  Free Memory       : {:1.2F} GB
-      #######   #######                  Active Memory     : {:1.2F} GB 
-    .######;     ;###;`".      
-   .#######;     ;#####.       
-   #########.   .########`     
-  ######'           '######    
- ;####                 ####;   
- ##'                     '##   
-#'                         `#'''] ,                       
+                  +              
+                  #              
+                 ###             
+                #####            
+                ######                       Screen Resolution : {}
+               ; #####;                      Operating System  : {}
+              +##.#####                      Kernel Version    : {} 
+             +##########                     Desktop           : {}
+            #############;                   Total Memory      : {:1.2F} GB
+           ###############+                  Free Memory       : {:1.2F} GB
+          #######   #######                  Active Memory     : {:1.2F} GB 
+        .######;     ;###;`".      
+       .#######;     ;#####.       
+       #########.   .########`     
+      ######'           '######    
+     ;####                 ####;   
+     ##'                     '##   
+    #'                         `#'''] ,                       
 "windows":'''
 
 ██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗███████╗
@@ -87,6 +87,7 @@ else:
     #print(" ".join(ostype))
     os.system("clear")		
     print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree))
+    print("\n"*2)
     
 
 
