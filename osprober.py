@@ -12,15 +12,15 @@ os_dict = {"arch":['Arch Linux','''
                   #              
                  ###             
                 #####            
-                ######                       Screen Resolution : {}
-               ; #####;                      Operating System  : {}
-              +##.#####                      Kernel Version    : {} 
-             +##########                     Desktop           : {}
-            #############;                   Total Memory      : {:1.2F} GB
-           ###############+                  Free Memory       : {:1.2F} GB
-          #######   #######                  Active Memory     : {:1.2F} GB 
-        .######;     ;###;`".                System Uptime     : {}
-       .#######;     ;#####.                 CPU               : {}
+                ######                 Screen Resolution : {}
+               ; #####;                Operating System  : {}
+              +##.#####                Kernel Version    : {} 
+             +##########               Desktop           : {}
+            #############;             Total Memory      : {:1.2F} GB
+           ###############+            Free Memory       : {:1.2F} GB
+          #######   #######            Active Memory     : {:1.2F} GB 
+        .######;     ;###;`".          System Uptime     : {}
+       .#######;     ;#####.           CPU               : {}
        #########.   .########`     
       ######'           '######    
      ;####                 ####;   
@@ -43,15 +43,15 @@ os_dict = {"arch":['Arch Linux','''
              ╔╠╠╠╠╠,   ╚║║║║║║║║║║║║║║M╔╓╓╓#N,    
            ╓╠╠╠╠╠╠╠╠∩   ╙╙      └╙╙║║║║║║║║║║║N   
           #╠╠╠╠╠╠╠╠╠╚                ╙║║║║║║║║║║  
-         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║                  Screen Resolution : {}
-  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ                 Operating System  : {}
-.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║                 Kernel Version    : {} 
-║║║║║║║║║║  ╠╠╠╠░                                                  Desktop           : {}
-╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»                 Total Memory      : {:1.2F} GB
- ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒                 Free Memory       : {:1.2F} GB
-         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓                  Active Memory     : {:1.2F} GB 
-         `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ                  System Uptime     : {}  
-           ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜                   CPU               : {}
+         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║           Screen Resolution : {}
+  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ          Operating System  : {}
+.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║          Kernel Version    : {} 
+║║║║║║║║║║  ╠╠╠╠░                                           Desktop           : {}
+╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»          Total Memory      : {:1.2F} GB
+ ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒          Free Memory       : {:1.2F} GB
+         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓           Active Memory     : {:1.2F} GB 
+         `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ           System Uptime     : {}  
+           ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜            CPU               : {}
             ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓    
               ╙╠╠╠∩   ╓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░      └     
                 `    #▓▓▓▓▓▓▓▓▓▓▓▓▓  ╓∩╠╠╠╠∩╔     
@@ -85,11 +85,11 @@ else:
     memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memactive = memtotal-memfree
     uptime = subprocess.getoutput("uptime -p")
-    cpu = subprocess.getoutput("cat /proc/cpuinfo | grep '''model name''' | head -n1")
+    cpu = subprocess.getoutput("cat /proc/cpuinfo | grep '''model name''' | head -n1").replace("\t","")
     
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[13:]))
+    print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[12:].replace("   "," ")))
     print("\n"*2)
     
 
