@@ -73,7 +73,7 @@ if platform[0] == 'Windows':
 else:
       
     linuxtype=re.findall('\w{4,}',platform[2], re.I)
-    if len(linuxtype)==0:
+    if len(linuxtype)==0 or linuxtype[0]=="generic":
         linuxtype=re.findall('\w{4,}[^generic]',platform[3], re.I)
         linuxtype[0]=linuxtype[0].strip(" ")
     else:
