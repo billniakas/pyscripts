@@ -8,12 +8,6 @@ import re
 platform=platform.uname()
 
 os_dict = {"arch":['Arch Linux','''
- █████╗ ██████╗  ██████╗██╗  ██╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
-██╔══██╗██╔══██╗██╔════╝██║  ██║    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
-███████║██████╔╝██║     ███████║    ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
-██╔══██║██╔══██╗██║     ██╔══██║    ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
-██║  ██║██║  ██║╚██████╗██║  ██║    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
-╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
              +              
               #              
              ###             
@@ -78,7 +72,7 @@ if platform[0] == 'Windows':
     resolution=str(screensize[0])+"x"+str(screensize[1])
 else:
       
-    linuxtype=re.findall('\w{4,}[^generic]',platform[2], re.I)
+    linuxtype=re.findall('\w{4,}',platform[2], re.I)
     if len(linuxtype)==0:
         linuxtype=re.findall('\w{4,}[^generic]',platform[3], re.I)
         linuxtype[0]=linuxtype[0].strip(" ")
