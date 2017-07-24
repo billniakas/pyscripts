@@ -4,17 +4,35 @@ import time
 import os
 import ctypes
 import subprocess
+import re
 platform=platform.uname()
 
-os_dict = {"arch":'''
+os_dict = {"arch":['Arch Linux','''
  █████╗ ██████╗  ██████╗██╗  ██╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
 ██╔══██╗██╔══██╗██╔════╝██║  ██║    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
 ███████║██████╔╝██║     ███████║    ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
 ██╔══██║██╔══██╗██║     ██╔══██║    ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
 ██║  ██║██║  ██║╚██████╗██║  ██║    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
 ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
-'''                                                                          
-,"windows":'''
+             +              
+              #              
+             ###             
+            #####            
+            ######           
+           ; #####;          
+          +##.#####          
+         +##########         
+        #############;       
+       ###############+      
+      #######   #######      
+    .######;     ;###;`".      
+   .#######;     ;#####.       
+   #########.   .########`     
+  ######'           '######    
+ ;####                 ####;   
+ ##'                     '##   
+#'                         `#'''] ,                       
+"windows":'''
 
 ██╗    ██╗██╗███╗   ██╗██████╗  ██████╗ ██╗    ██╗███████╗
 ██║    ██║██║████╗  ██║██╔══██╗██╔═══██╗██║    ██║██╔════╝
@@ -36,8 +54,11 @@ if platform[0] == 'Windows':
     time.sleep(0.5)
     resolution=str(screensize[0])+"x"+str(screensize[1])
 else:
-    ostype=("You are using",platform[0],platform[2])
+      
+    linuxtype=re.findall('\w{4,}',platform[2], re.I)
+    ostype=("\nYou are using",os_dict[linuxtype[0].lower()][0],platform[2])
     print(" ".join(ostype))
+    print(os_dict[linuxtype[0].lower()][1])
     Input = subprocess.getoutput("xrandr | grep -i '*'")
     resolution=Input.split()[0]
 
