@@ -16,9 +16,9 @@ os_dict = {"arch":['Arch Linux','''
            ; #####;                      Operating System  : {}
           +##.#####                      Kernel Version    : {} 
          +##########                     Desktop           : {}
-        #############;       
-       ###############+      
-      #######   #######      
+        #############;                   Total Memory      : {:1.2F} GB
+       ###############+                  Free Memory       : {:1.2F} GB
+      #######   #######                  Active Memory     : {:1.2F} GB 
     .######;     ;###;`".      
    .#######;     ;#####.       
    #########.   .########`     
@@ -43,13 +43,13 @@ os_dict = {"arch":['Arch Linux','''
              ╔╠╠╠╠╠,   ╚║║║║║║║║║║║║║║M╔╓╓╓#N,    
            ╓╠╠╠╠╠╠╠╠∩   ╙╙      └╙╙║║║║║║║║║║║N   
           #╠╠╠╠╠╠╠╠╠╚                ╙║║║║║║║║║║  
-         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║                   Screen Resolution : {}
-  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ                  Operating System  : {}
-.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║                  Kernel Version    : {} 
-║║║║║║║║║║  ╠╠╠╠░                                                   Desktop           : {}
-╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»
- ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒
-         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓ 
+         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║                                     Screen Resolution : {}
+  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ                                  Operating System  : {}
+.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║                                 Kernel Version    : {} 
+║║║║║║║║║║  ╠╠╠╠░                                                                             Desktop           : {}
+╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»                                 Total Memory      : {:1.2F} GB
+ ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒                           Free Memory       : {:1.2F} GB
+         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓                                    Active Memory     : {:1.2F} GB 
          `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ 
            ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜  
             ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓    
@@ -81,11 +81,11 @@ else:
         pass
     ostype=("\nYou are using",os_dict[linuxtype[0].lower()][0],platform[2],"\n")
     desktop=os.environ.get('DESKTOP_SESSION')
+    memtotal = float(subprocess.getoutput("grep MemTotal /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
+    memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
+    memactive = memtotal-memfree
     #print(" ".join(ostype))
-    os.system("clear")
-    print(os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop.capitalize()))
-    time.sleep(1)
-    print("\n")
+    print(os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree))
     
 
 
