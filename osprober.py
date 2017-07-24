@@ -82,7 +82,10 @@ else:
     ostype=("\nYou are using",os_dict[linuxtype[0].lower()][0],platform[2],"\n")
     desktop=os.environ.get('DESKTOP_SESSION')
     #print(" ".join(ostype))
+    os.system("clear")
     print(os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop.capitalize()))
+    time.sleep(1)
+    print("\n")
     
 
 
