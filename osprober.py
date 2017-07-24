@@ -8,7 +8,7 @@ import re
 platform=platform.uname()
 
 os_dict = {"arch":['Arch Linux','''
-                  +              
+                 +              
                   #              
                  ###             
                 #####            
@@ -19,7 +19,7 @@ os_dict = {"arch":['Arch Linux','''
             #############;                   Total Memory      : {:1.2F} GB
            ###############+                  Free Memory       : {:1.2F} GB
           #######   #######                  Active Memory     : {:1.2F} GB 
-        .######;     ;###;`".      
+        .######;     ;###;`".                System Uptime     : {}
        .#######;     ;#####.       
        #########.   .########`     
       ######'           '######    
@@ -50,7 +50,7 @@ os_dict = {"arch":['Arch Linux','''
 ╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»                 Total Memory      : {:1.2F} GB
  ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒                 Free Memory       : {:1.2F} GB
          ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓                  Active Memory     : {:1.2F} GB 
-         `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ 
+         `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ                  System Uptime     : {}  
            ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜  
             ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓    
               ╙╠╠╠∩   ╓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░      └     
@@ -84,9 +84,11 @@ else:
     memtotal = float(subprocess.getoutput("grep MemTotal /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memactive = memtotal-memfree
+    uptime = subprocess.getoutput("uptime -p")
+    
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree))
+    print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:]))
     print("\n"*2)
     
 
