@@ -8,14 +8,14 @@ import re
 platform=platform.uname()
 
 os_dict = {"arch":['Arch Linux','''
-             +              
+              +              
               #              
              ###             
             #####            
-            ######           
-           ; #####;          
-          +##.#####          
-         +##########         
+            ######                       Screen Resolution : {}
+           ; #####;                      Operating System  : {}
+          +##.#####                      Kernel Version    : {} 
+         +##########                     Desktop           : {}
         #############;       
        ###############+      
       #######   #######      
@@ -43,10 +43,10 @@ os_dict = {"arch":['Arch Linux','''
              ╔╠╠╠╠╠,   ╚║║║║║║║║║║║║║║M╔╓╓╓#N,    
            ╓╠╠╠╠╠╠╠╠∩   ╙╙      └╙╙║║║║║║║║║║║N   
           #╠╠╠╠╠╠╠╠╠╚                ╙║║║║║║║║║║  
-         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║ 
-  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ
-.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║
-║║║║║║║║║║  ╠╠╠╠░                                 
+         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║                                     Screen Resolution : {}
+  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ                                  Operating System  : {}
+.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║                                 Kernel Version    : {} 
+║║║║║║║║║║  ╠╠╠╠░                                                                             Desktop           : {}
 ╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»
  ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒
          ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓ 
@@ -71,7 +71,8 @@ if platform[0] == 'Windows':
     time.sleep(0.5)
     resolution=str(screensize[0])+"x"+str(screensize[1])
 else:
-      
+    Input = subprocess.getoutput("xrandr | grep -i '*'")
+    resolution=Input.split()[0] 
     linuxtype=re.findall('\w{4,}',platform[2], re.I)
     if len(linuxtype)==0 or linuxtype[0]=="generic":
         linuxtype=re.findall('\w{4,}[^generic]',platform[3], re.I)
@@ -79,9 +80,9 @@ else:
     else:
         pass
     ostype=("\nYou are using",os_dict[linuxtype[0].lower()][0],platform[2],"\n")
-    print(" ".join(ostype))
-    print(os_dict[linuxtype[0].lower()][1])
-    Input = subprocess.getoutput("xrandr | grep -i '*'")
-    resolution=Input.split()[0]
+    desktop=os.environ.get('DESKTOP_SESSION')
+    #print(" ".join(ostype))
+    print(os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop))
+    
 
 
