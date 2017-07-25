@@ -59,34 +59,25 @@ os_dict = {"arch":['Arch Linux','''
                           └└└└└└    ╠╠╠╠╠╠╠╠╠╠    
                                      ╚╠╠╠╠╠╠╠     
                                        └╙╙╙       '''],"linux mint":["Linux Mint",'''
-  
-     ...................................                
-     .                                    ..            
-     .                    ............       .          
-     .    ...........................'''..     .        
-     .    ........   ..............''''''''..   .           Screen Resolution : {}
-     .       .....   .............'......',,,.   .          Operating System  : {}
-     .         ...   ......               .,,,    .         Kernel Version    : {}
-          .    ...   .'''    ...     ...   .,,.   .         Desktop           : {}
-          .    ''.   .'''   .'''.   .,,,.   ,,.   .         Total Memory      : {:1.2F} GB
-          .    ''.   .'''   .,,,.   .,,,.   ,,.   .         Free Memory       : {:1.2F} GB
-          .    ''.   .,,'   .,,,.   .,,,.   ,,.   .         Active Memory     : {:1.2F} GB 
-          .    ','   .,,,   .,,,'   .,,,.   ,,.   .         System Uptime     : {}
-          .    ,,'   .,,,''',;;;,,,,,,,,....,,.   .         CPU               : {}
-               ,,,    ,,;;;;;;;;;;;;;;,,....,,.   .     
-           .   .,,'    ......'''''''''.....,,,.   .     
-            .   .,;,.        ............',,,,.   .     
-             .    .,;;;,',,,,,,,,,,,,,;;;;;;,,.   .     
-              .     ..',;::::::::::::;;;;;;;,.    .     
-                                                  .     
-                                                  .     
-                                                        
-          d                    '.''..'       '          
-          d   .'.;;,.:  ;',  :.' .;  ;.. ... ,'         
-          d   ;:o. c:x  d,o':c.'  ;  ;.',. .',          
-          o...;:o. ::d..d,o.;o.' .;  ;.',. .',          
-          .::;'';  '..::.., .:..  .  '.... ...          
-          .     .    .  . .  .                      ''']}                                                         
+
+                                       
+ MMMMMMMMMMMMMMMMMMMMMMMMMmds+.        
+ MMm----::-://////////////oymNMd+`     
+ MMd      /++                -sNMd:    
+ MMNso/`  dMM    `.::-. .-::.` .hMN:      Screen Resolution : {}
+ ddddMMh  dMM   :hNMNMNhNMNMNh: `NMm      Operating System  : {}
+     NMm  dMM  .NMN/-+MMM+-/NMN` dMM      Kernel Version    : {}
+     NMm  dMM  -MMm  `MMM   dMM. dMM      Desktop           : {}
+     NMm  dMM  -MMm  `MMM   dMM. dMM      Total Memory      : {:1.2F} GB
+     NMm  dMM  .mmd  `mmm   yMM. dMM      Free Memory       : {:1.2F} GB
+     NMm  dMM`  ..`   ...   ydm. dMM      Active Memory     : {:1.2F} GB 
+     hMM- +MMd/-------...-:sdds  dMM      System Uptime     : {}  
+     -NMm- :hNMNNNmdddddddddy/`  dMM      CPU               : {}
+      -dMNs-``-::::-------.``    dMM   
+       `/dMNmy+/:-------------:/yMMM   
+          ./ydNMMMMMMMMMMMMMMMMMMMMM   
+             \.MMMMMMMMMMMMMMMMMMM    
+            ''']}                                                         
                                                                           
 
 if platform[0] == 'Windows':
