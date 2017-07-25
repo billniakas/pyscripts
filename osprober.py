@@ -72,14 +72,15 @@ if platform[0] == 'Windows':
     resolution=str(screensize[0])+"x"+str(screensize[1])
 else:
     Input = subprocess.getoutput("xrandr | grep -i '*'")
-    resolution=Input.split()[0] 
-    linuxtype=re.findall('\w{4,}',platform[2], re.I)
-    if len(linuxtype)==0 or linuxtype[0]=="generic":
-        linuxtype=re.findall('\w{4,}[^generic]',platform[3], re.I)
-        linuxtype[0]=linuxtype[0].strip(" ")
-    else:
-        pass
-    ostype=("\nYou are using",os_dict[linuxtype[0].lower()][0],platform[2],"\n")
+    resolution=Input.split()[0]
+    linuxtype=subprocess.getoutput("cat /etc/os-release | grep '^NAME'").replace('''"''','')
+##    linuxtype=re.findall('\w{4,}',platform[2], re.I)
+##    if len(linuxtype)==0 or linuxtype[0]=="generic":
+##        linuxtype=re.findall('\w{4,}[^generic]',platform[3], re.I)
+##        linuxtype[0]=linuxtype[0].strip(" ")
+##    else:
+##        pass
+    ostype=("\nYou are using",os_dict[linuxtype[5:].lower()][0],platform[2],"\n")
     desktop=os.environ.get('DESKTOP_SESSION')
     memtotal = float(subprocess.getoutput("grep MemTotal /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
@@ -89,7 +90,7 @@ else:
     
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[0].lower()][1].format(resolution,os_dict[linuxtype[0].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[12:].replace("   "," ")))
+    print("\n",os_dict[linuxtype[5:].lower()][1].format(resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[12:].replace("   "," ")))
     print("\n"*2)
     
 
