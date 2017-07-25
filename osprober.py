@@ -7,7 +7,7 @@ import subprocess
 import re
 platform=platform.uname()
 
-os_dict = {"arch":['Arch Linux','''
+os_dict = {"arch linux":['Arch Linux','''
                  +              
                   #              
                  ###             
