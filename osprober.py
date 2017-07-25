@@ -107,12 +107,12 @@ else:
     memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memactive = memtotal-memfree
     uptime = subprocess.getoutput("uptime -p")
-    cpu = subprocess.getoutput("cat /proc/cpuinfo | grep '''model name''' | head -n1").replace("\t","")
+    cpu = subprocess.getoutput("cat /proc/cpuinfo | grep '''model name''' | head -n1").replace("          "," ").replace("  @ ","@")
     
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[5:].lower()][1].format(resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[12:],packagelist[0]))
-    print("\n"*2)
+    print("\n",os_dict[linuxtype[5:].lower()][1].format(resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[13:],packagelist[0]))
+    #print("\n"*2)
     
 
 
