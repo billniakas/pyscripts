@@ -18,7 +18,7 @@ os_dict = {"arch linux":['Arch Linux','''
              +##########               Desktop           : {}
             #############;             Total Memory      : {:1.2F} GB
            ###############+            Free Memory       : {:1.2F} GB
-          #######   #######            Active Memory     : {:1.2F} MB 
+          #######   #######            Active Memory     : {:1.2F} GB 
         .######;     ;###;`".          System Uptime     : {}
        .#######;     ;#####.           CPU               : {}
        #########.   .########`         Packages          : {}
@@ -49,7 +49,7 @@ os_dict = {"arch linux":['Arch Linux','''
 ║║║║║║║║║║  ╠╠╠╠░                                           Desktop           : {}
 ╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»          Total Memory      : {:1.2F} GB
  ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒          Free Memory       : {:1.2F} GB
-         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓           Active Memory     : {:1.2F} MB 
+         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓           Active Memory     : {:1.2F} GB 
          `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ           System Uptime     : {}  
            ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜            CPU               : {}
             ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓              Packages          : {}        
@@ -70,7 +70,7 @@ os_dict = {"arch linux":['Arch Linux','''
      NMm  dMM  -MMm  `MMM   dMM. dMM      Desktop           : {}
      NMm  dMM  -MMm  `MMM   dMM. dMM      Total Memory      : {:1.2F} GB
      NMm  dMM  .mmd  `mmm   yMM. dMM      Free Memory       : {:1.2F} GB
-     NMm  dMM`  ..`   ...   ydm. dMM      Active Memory     : {:1.2F} MB 
+     NMm  dMM`  ..`   ...   ydm. dMM      Active Memory     : {:1.2F} GB 
      hMM- +MMd/-------...-:sdds  dMM      System Uptime     : {}  
      -NMm- :hNMNNNmdddddddddy/`  dMM      CPU               : {}
       -dMNs-``-::::-------.``    dMM      Packages          : {}
@@ -109,14 +109,14 @@ else:
     ostype=("\nYou are using",os_dict[linuxtype[5:].lower()][0],platform[2],"\n")
     desktop=os.environ.get('DESKTOP_SESSION')
     memtotal = float(subprocess.getoutput("grep MemTotal /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
-    memfree = float(subprocess.getoutput("grep HighFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
+    memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memactive = (memtotal-memfree)
     uptime = subprocess.getoutput("uptime -p")
     cpu = subprocess.getoutput("cat /proc/cpuinfo | grep '''model name''' | head -n1").replace("          "," ").replace("  @ ","@")
     
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[5:].lower()][1].format(computer,underline,resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memactive,memfree*1000,uptime[3:],cpu[13:],packagelist[0]))
+    print("\n",os_dict[linuxtype[5:].lower()][1].format(computer,underline,resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memfree,memactive,uptime[3:],cpu[13:],packagelist[0]))
     #print("\n"*2)
     
 
