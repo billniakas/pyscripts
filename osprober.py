@@ -21,7 +21,7 @@ os_dict = {"arch":['Arch Linux','''
           #######   #######            Active Memory     : {:1.2F} GB 
         .######;     ;###;`".          System Uptime     : {}
        .#######;     ;#####.           CPU               : {}
-       #########.   .########`     
+       #########.   .########`         Packages          : {}
       ######'           '######    
      ;####                 ####;   
      ##'                     '##   
@@ -52,7 +52,7 @@ os_dict = {"arch":['Arch Linux','''
          ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓           Active Memory     : {:1.2F} GB 
          `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ           System Uptime     : {}  
            ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜            CPU               : {}
-            ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓    
+            ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓              Packages          : {}        
               ╙╠╠╠∩   ╓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░      └     
                 `    #▓▓▓▓▓▓▓▓▓▓▓▓▓  ╓∩╠╠╠╠∩╔     
                     "▀▓▓▓▓▓▓▓▓▓▓▓▓  #╠╠╠╠╠╠╠╠░    
@@ -73,7 +73,7 @@ os_dict = {"arch":['Arch Linux','''
      NMm  dMM`  ..`   ...   ydm. dMM      Active Memory     : {:1.2F} GB 
      hMM- +MMd/-------...-:sdds  dMM      System Uptime     : {}  
      -NMm- :hNMNNNmdddddddddy/`  dMM      CPU               : {}
-      -dMNs-``-::::-------.``    dMM   
+      -dMNs-``-::::-------.``    dMM      Packages          : {}
        `/dMNmy+/:-------------:/yMMM   
           ./ydNMMMMMMMMMMMMMMMMMMMMM   
              \.MMMMMMMMMMMMMMMMMMM    
@@ -93,6 +93,8 @@ else:
     Input = subprocess.getoutput("xrandr | grep -i '*'")
     resolution=Input.split()[0]
     linuxtype=subprocess.getoutput("cat /etc/os-release | grep '^NAME'").replace('''"''','')
+    packages = subprocess.getoutput("$(pacman -Q | wc -l) || $(dpkg -l | grep -c '^ii')")
+    packagelist=re.findall('\d{3,}',packages)
 ##    linuxtype=re.findall('\w{4,}',platform[2], re.I)
 ##    if len(linuxtype)==0 or linuxtype[0]=="generic":
 ##        linuxtype=re.findall('\w{4,}[^generic]',platform[3], re.I)
@@ -109,7 +111,7 @@ else:
     
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[5:].lower()][1].format(resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[12:].replace("   "," ")))
+    print("\n",os_dict[linuxtype[5:].lower()][1].format(resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memactive,memfree,uptime[3:],cpu[12:],packagelist[0]))
     print("\n"*2)
     
 
