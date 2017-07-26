@@ -22,7 +22,7 @@ os_dict = {"arch linux":['Arch Linux','''
         .######;     ;###;`".          System Uptime     : {}
        .#######;     ;#####.           CPU               : {}
        #########.   .########`         Packages          : {}
-      ######'           '######    
+      ######'           '######        GPU               : {}
      ;####                 ####;   
      ##'                     '##   
     #'                         `#'''] ,                       
@@ -99,6 +99,7 @@ else:
     hostname = subprocess.getoutput("hostname")
     computer=user+"@"+hostname
     underline=str(len(computer)*"-")
+    gpu = subprocess.getoutput("glxinfo -B | grep -i '''opengl renderer string:'''")
     
 ##    linuxtype=re.findall('\w{4,}',platform[2], re.I)
 ##    if len(linuxtype)==0 or linuxtype[0]=="generic":
@@ -116,7 +117,7 @@ else:
     
     #print(" ".join(ostype))
     os.system("clear")		
-    print("\n",os_dict[linuxtype[5:].lower()][1].format(computer,underline,resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memfree,memactive,uptime[3:],cpu[13:],packagelist[0]))
+    print("\n",os_dict[linuxtype[5:].lower()][1].format(computer,underline,resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memfree,memactive,uptime[3:],cpu[13:],packagelist[0],gpu[24:]))
     #print("\n"*2)
     
 
