@@ -53,7 +53,7 @@ os_dict = {"arch linux":['Arch Linux','''
          `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ           System Uptime     : {}  
            ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜            CPU               : {}
             ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓              Packages          : {}        
-              ╙╠╠╠∩   ╓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░      └     
+              ╙╠╠╠∩   ╓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░      └               GPU               : {}   
                 `    #▓▓▓▓▓▓▓▓▓▓▓▓▓  ╓∩╠╠╠╠∩╔     
                     "▀▓▓▓▓▓▓▓▓▓▓▓▓  #╠╠╠╠╠╠╠╠░    
                           └└└└└└    ╠╠╠╠╠╠╠╠╠╠    
@@ -74,7 +74,7 @@ os_dict = {"arch linux":['Arch Linux','''
      hMM- +MMd/-------...-:sdds  dMM      System Uptime     : {}  
      -NMm- :hNMNNNmdddddddddy/`  dMM      CPU               : {}
       -dMNs-``-::::-------.``    dMM      Packages          : {}
-       `/dMNmy+/:-------------:/yMMM   
+       `/dMNmy+/:-------------:/yMMM      GPU               : {}  
           ./ydNMMMMMMMMMMMMMMMMMMMMM   
              \.MMMMMMMMMMMMMMMMMMM    
             ''']}                                                         
