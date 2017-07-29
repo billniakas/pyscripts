@@ -42,9 +42,9 @@ os_dict = {"arch linux":['Arch Linux','''
          .:++o:  /++++++++/:--:/-         Operating System  : {}
         o:+o+:++.`..```.-/oo+++++/        Kernel Version    : {}
        .:+o:+o/.          `+sssoo+/       Desktop           : {}
-  .++/+:+oo+o:`             /sssooo.      Total Memory      : {}
- /+++//+:`oo+o               /::--:.      Free Memory       : {}
- \+/+o+++`o++o               ++////.      Active Memory     : {}
+  .++/+:+oo+o:`             /sssooo.      Total Memory      : {:1.2F} GB
+ /+++//+:`oo+o               /::--:.      Free Memory       : {:1.2F} GB
+ \+/+o+++`o++o               ++////.      Active Memory     : {:1.2F} GB
   .++.o+++oo+:`             /dddhhh.      System Uptime     : {}
        .+.o+oo:.          `oddhhhh+       CPU               : {}
         \+.++o+o``-````.:ohdhhhhh+        Packages          : {}  
