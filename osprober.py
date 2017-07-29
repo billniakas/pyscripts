@@ -100,6 +100,8 @@ else:
     computer=user+"@"+hostname
     underline=str(len(computer)*"-")
     gpu = subprocess.getoutput("glxinfo -B | grep -i '''opengl renderer string:'''")
+    gpu = re.findall(r': (.*)',gpu)
+    gpu = " ".join(gpu)
     if len(gpu) == 0:
         gpu = subprocess.getoutput("lspci -k | grep -iEA3 '3d|vga compatible controller' | head -n1")
         gpu = re.findall(r'\[(.*?)\]',gpu) 
