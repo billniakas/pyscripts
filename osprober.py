@@ -35,30 +35,24 @@ os_dict = {"arch linux":['Arch Linux','''
 ╚███╔███╔╝██║██║ ╚████║██████╔╝╚██████╔╝╚███╔███╔╝███████║
  ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚══════╝
                                                           
-''', "ubuntu":["Ubuntu Linux",'''                                     y#▓▓▓▓▓▄     
-                                    #▓▓▓▓▓▓▓▓▓    
-                      ¿╓╔###║###M╔  ▓▓▓▓▓▓▓▓▓▓    
-                    ╙║║║║║║║║║║║║║░ └▓▓▓▓▓▓▓▓┘    
-               ╔╠░    ║║║║║║║║║║║║║N, └╙╩╩╙└      
-             ╔╠╠╠╠╠,   ╚║║║║║║║║║║║║║║M╔╓╓╓#N,    
-           ╓╠╠╠╠╠╠╠╠∩   ╙╙      └╙╙║║║║║║║║║║║N             {}   
-          #╠╠╠╠╠╠╠╠╠╚                ╙║║║║║║║║║║            {}
-         ╔╠╠╠╠╠╠╠╠╚                    ╙║║║║║║║║║           Screen Resolution : {}
-  .╓╔╔╓,  ╙╠╠╠╠╠╠╚                      ╙║║║║║║║║Γ          Operating System  : {}
-.║║║║║║║║,  ╠╠╠╠╠                        ║║║║║║║║║          Kernel Version    : {} 
-║║║║║║║║║║  ╠╠╠╠░                                           Desktop           : {}
-╚║║║║║║║║╠  ╠╠╠╠░                        ╓»»»»»»»»          Total Memory      : {:1.2F} GB
- ╙╚║║║║╚╙  #╠╠╠╠╠∩                       ▓▓▓▓▓▓▓▓▒          Free Memory       : {:1.2F} GB
-         ╔╠╠╠╠╠╠╠╠,                    \▓▓▓▓▓▓▓▓▓           Active Memory     : {:1.2F} GB 
-         `╠╠╠╠╠╠╠╠╠∩                  #▓▓▓▓▓▓▓▓▓Ñ           System Uptime     : {}  
-           ╠╠╠╠╠╠╠╠╠╠              ╓@▓▓▓▓▓▓▓▓▓▓╜            CPU               : {}
-            ╙╠╠╠╠╠╠╚   ┌▓▓₧MmmM₧▓▓▓▓▓▓▓▓▓▓▓▓▓▓              Packages          : {}        
-              ╙╠╠╠∩   ╓▓▓▓▓▓▓▓▓▓▓▓▓▓▀░      └               GPU               : {}   
-                `    #▓▓▓▓▓▓▓▓▓▓▓▓▓  ╓∩╠╠╠╠∩╔     
-                    "▀▓▓▓▓▓▓▓▓▓▓▓▓  #╠╠╠╠╠╠╠╠░    
-                          └└└└└└    ╠╠╠╠╠╠╠╠╠╠    
-                                     ╚╠╠╠╠╠╠╠     
-                                       └╙╙╙       '''],"linux mint":["Linux Mint",'''
+''', "ubuntu":["Ubuntu Linux",'''                           ./+o+-      
+                  yyyyy- -yyyyyy+         {}
+               ://+//////-yyyyyyo         {}
+           .++ .:/++++++/-.+sss/`         Screen Resolution : {}
+         .:++o:  /++++++++/:--:/-         Operating System  : {}
+        o:+o+:++.`..```.-/oo+++++/        Kernel Version    : {}
+       .:+o:+o/.          `+sssoo+/       Desktop           : {}
+  .++/+:+oo+o:`             /sssooo.      Total Memory      : {}
+ /+++//+:`oo+o               /::--:.      Free Memory       : {}
+ \+/+o+++`o++o               ++////.      Active Memory     : {}
+  .++.o+++oo+:`             /dddhhh.      System Uptime     : {}
+       .+.o+oo:.          `oddhhhh+       CPU               : {}
+        \+.++o+o``-````.:ohdhhhhh+        Packages          : {}  
+         `:o+++ `ohhhhhhhhyo++os:         GPU               : {}
+           .o:`.syhhhhhhh/.oo++o`     
+               /osyyyyyyo++ooo+++/    
+                   ````` +oo+++o\:    
+                          `oo++.  '''],"linux mint":["Linux Mint",'''
 
                                        
  MMMMMMMMMMMMMMMMMMMMMMMMMmds+.        
@@ -77,7 +71,35 @@ os_dict = {"arch linux":['Arch Linux','''
        `/dMNmy+/:-------------:/yMMM      GPU               : {}  
           ./ydNMMMMMMMMMMMMMMMMMMMMM   
              \.MMMMMMMMMMMMMMMMMMM    
-            ''']}                                                         
+            '''],'linux':['Linux','''
+
+                 .88888888:.              {}
+                88888888.88888.           {}
+              .8888888888888888.          Screen Resolution : {}
+              888888888888888888          Operating System  : {}
+              88' _`88'_  `88888          Kernel Version    : {} 
+              88 88 88 88  88888          Desktop           : {}  
+              88_88_::_88_:88888          Total Memory      : {:1.2F} GB
+              88:::,::,:::::8888          Free Memory       : {:1.2F} GB
+              88`:::::::::'`8888          Active Memory     : {:1.2F} GB
+             .88  `::::'    8:88.         System Uptime     : {} 
+            8888            `8:888.       CPU               : {} 
+          .8888'             `888888.     Packages          : {} 
+         .8888:..  .::.  ...:'8888888:.   GPU               : {} 
+        .8888.'     :'     `'::`88:88888 
+       .8888        '         `.888:8888. 
+      888:8         .           888:88888 
+    .888:88        .:           888:88888: 
+    8888888.       ::           88:888888 
+    `.::.888.      ::          .88888888 
+   .::::::.888.    ::         :::`8888'.:. 
+  ::::::::::.888   '         .:::::::::::: 
+  ::::::::::::.8    '      .:8::::::::::::. 
+ .::::::::::::::.        .:888::::::::::::: 
+ :::::::::::::::88:.__..:88888:::::::::::' 
+  `'.:::::::::::88888888888.88:::::::::' 
+        `':::_:' -- '' -'-' `':_::::'`
+        ''']}                                                         
                                                                           
 
 if platform[0] == 'Windows':
@@ -90,9 +112,11 @@ if platform[0] == 'Windows':
     time.sleep(0.5)
     resolution=str(screensize[0])+"x"+str(screensize[1])
 else:
+    
     Input = subprocess.getoutput("xrandr | grep -i '*'")
     resolution=Input.split()[0]
     linuxtype=subprocess.getoutput("cat /etc/os-release | grep '^NAME'").replace('''"''','')
+    
     packages = subprocess.getoutput("$(pacman -Q | wc -l) || $(dpkg -l | grep -c '^ii')")
     packagelist=re.findall('\d{3,}',packages)
     user = subprocess.getoutput("echo $USER")
@@ -113,7 +137,10 @@ else:
 ##        linuxtype[0]=linuxtype[0].strip(" ")
 ##    else:
 ##        pass
-    ostype=("\nYou are using",os_dict[linuxtype[5:].lower()][0],platform[2],"\n")
+    os_type = linuxtype[5:].lower()
+    if os_type not in os_dict.keys():
+        os_type = 'linux'
+    #ostype=("\nYou are using",os_dict[os_type][0],platform[2],"\n")
     desktop=os.environ.get('DESKTOP_SESSION')
     memtotal = float(subprocess.getoutput("grep MemTotal /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
     memfree = float(subprocess.getoutput("grep MemFree /proc/meminfo |grep -oE '''[0-9]*'''"))/pow(10,6)
@@ -123,8 +150,9 @@ else:
     cpu = " ".join(re.findall(r': (.*)',cpu)).replace("    "," ")
     
     #print(" ".join(ostype))
-    os.system("clear")		
-    print("\n",os_dict[linuxtype[5:].lower()][1].format(computer,underline,resolution,os_dict[linuxtype[5:].lower()][0],platform[2],desktop,memtotal,memfree,memactive,uptime[3:],cpu,packagelist[0],gpu))
+    os.system("clear")
+
+    print("\n",os_dict[os_type][1].format(computer,underline,resolution,os_dict[os_type][0],platform[2],desktop,memtotal,memfree,memactive,uptime[3:],cpu,packagelist[0],gpu))
     #print("\n"*2)
     
 
