@@ -130,6 +130,10 @@ else:
     gpu = subprocess.getoutput("lspci -k | grep -iEA3 '3d|vga compatible controller' | head -n1")
     gpu = re.findall(r'\[(.*?)\]',gpu) 
     gpu = " ".join(gpu)
+    if len(gpu) == 0:
+        gpu = subprocess.getoutput("lspci -k | grep -iEA3 '3d|vga compatible controller' | head -n1")
+        gpu = re.findall(r'\: (\w+ \w+ \w+ \w+)*',gpu)
+        gpu = " ".join(gpu)
     
 ##    linuxtype=re.findall('\w{4,}',platform[2], re.I)
 ##    if len(linuxtype)==0 or linuxtype[0]=="generic":
@@ -147,7 +151,7 @@ else:
     memactive = (memtotal-memfree)
     uptime = subprocess.getoutput("uptime -p")
     cpu = subprocess.getoutput("cat /proc/cpuinfo | grep '''model name''' | head -n1").replace("  @ ","@")
-    cpu = " ".join(re.findall(r': (.*)',cpu)).replace("    "," ")
+    cpu = " ".join(re.findall(r': (.*)',cpu)).replace("      "," ")
     
     #print(" ".join(ostype))
     os.system("clear")
