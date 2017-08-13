@@ -8,3 +8,4 @@ A collection of small python scripts which i did just for fun
 * osprober : scans your OS and shows a cool text art logo
 * pylogger : a simple keylogger
 * logcheck : checks if your login credentials are correct
+* matrix : a simple matrix-style terminal screen, nothing fancy
