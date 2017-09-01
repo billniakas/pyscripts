@@ -9,3 +9,4 @@ A collection of small python scripts which i did just for fun
 * pylogger : a simple keylogger
 * logcheck : checks if your login credentials are correct
 * matrix : a simple matrix-style terminal screen, nothing fancy
+* clock : a simple ASCII clock made with curses
