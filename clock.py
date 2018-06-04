@@ -37,6 +37,7 @@ while q not in [ord('q'),ord('Q')]:
     dims = stdscr.getmaxyx()
     x,y=int(dims[1]/2)-5*int(len(timedict["0"])/2),int(dims[0]/2)-int(len(timedict["0"])/2)
     stdscr.clear()
+    time.sleep(0.1)
     curses.curs_set(0)
     stdscr.nodelay(0)
     clock=subprocess.getoutput("date -R")
@@ -52,18 +53,18 @@ while q not in [ord('q'),ord('Q')]:
         stdscr.addstr(y, x+25,timedict[str(clock[22])][i],curses.A_BOLD)
         stdscr.addstr(y, x+30,timedict[str(clock[23])][i],curses.A_BOLD)
         stdscr.addstr(y, x+40,timedict[str(clock[24])][i],curses.A_BOLD)
-       
+
 
 
         y+=1
-        
+
 
 
 
     stdscr.refresh()
 os.system("clear")
 
-    
-    
-    
-       
+
+
+
+
